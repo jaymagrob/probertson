@@ -1,0 +1,26 @@
+{
+  "name": "probertson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "m": "uglifycss reset.css > reset.min.css; uglifycss style.css > style.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaymagrob/probertson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaymagrob/probertson/issues"
+  },
+  "homepage": "https://github.com/jaymagrob/probertson#readme",
+  "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^9.8.1",
+    "uglifycss": "0.0.29"
+  }
+}
