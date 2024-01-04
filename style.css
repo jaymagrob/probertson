@@ -105,7 +105,7 @@ section {
   padding: 20px 150px;
 }
 
-#author, #books {
+#author, #books, #reviews {
   background-color: var(--main1);
 }
 
@@ -204,6 +204,60 @@ nav ul {
   color: black
 }
 
+
+
+
+blockquote {
+margin: auto;
+color: #1a1a1a;
+border-top: 6px var(--main2) solid;
+border-bottom: 2px #ccc solid;
+margin: 20px 0;
+background: #dcdcdc;
+box-shadow: .5em .5em var(--main4);
+padding: 20px;
+text-align: center;
+transition: box-shadow 3s;
+line-spacing: 5em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:hover {
+box-shadow: 1em 1em var(--main4);
+}
+
+blockquote:before {
+color: #ccc;
+content: open-quote;
+font-size: 4em;
+line-height: 0.1em;
+margin-right: 0.25em;
+vertical-align: -0.4em;
+transition: color 3s;
+}
+
+blockquote:hover::before {
+  color: #aaa;
+  }
+
+blockquote p {
+display: inline;
+}
+
+cite {
+font-weight: bold;
+display: block;
+font-size: 1.4rem;
+text-align: right;
+}
+
+@media (max-width: 800px) {
+  section#reviews {
+    margin: 10px;
+    padding: 0;
+  }
+}
+
 @media (max-width: 560px) {
   section {
     padding: 20px 1px;
@@ -220,4 +274,42 @@ nav ul {
   .bttn {
     height: 48px;
   }
+}
+
+#quotes {
+  overflow: hidden;
+}
+.quote-slider {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  list-style: none;
+  display: block;
+  position: relative;
+}
+.quote-slider li {
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -60%;
+  width: 60%;
+  text-align: center;
+  z-index: 5;
+}
+
+.quote-slider .arrow {
+  position: absolute;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  line-height: 400px;
+  padding-left: 40px;
+}
+.quote-slider .arrow.right {
+  right: 0;
+}
+.quote-slider .arrow.left {
+  left: 0;
 }

@@ -17,6 +17,7 @@
   </noscript>
   <link rel="stylesheet" href="reset.min.css">
   <link rel="stylesheet" href="style.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>P Robertson: Scottish based author of Crossroads</title>
   <meta name="description"
     content="P Robertson is a childfree author. As a childfree woman, she struggled to identify with most of the female characters in the stories she read. So, she decided to write her own stories, ‘Crossroads’ being one of them, hoping to reach other childfree adults who might feel the same.">
@@ -33,6 +34,7 @@
         <li><a href="#books">Books</a></li>
         <li><a href="#author">Author</a></li>
         <li><a href="#interviews">Interviews</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a target="_blank" aria-label="P Robertson Instagram" href="https://www.instagram.com/p.robertson_author">
@@ -63,6 +65,55 @@
         <img src="assets/crossroads.jpg" alt="Crossroads bookcover" />
       </div>
     </section>
+    <section id="quotes">
+      <ul class="quote-slider">
+        <li id="quote0" style='right: 20%'>
+          There is a lot packed into Crossroads and I felt like I’d been through the ringer in the short time I spent
+          with
+          Izzy.
+          <div class="site">- CLAIRE</div>
+        </li>
+        <li id="quote1">
+          Though she may be tiny, this book is FIERCE with heart wrenching gut punches.
+          <div class="site">- HAILEY FISH</div>
+        </li>
+        <li id="quote2">
+          This was a super quick read - but at the same time held so much within it.
+          <div class="site">- SONJA CHARTERS</div>
+        </li>
+        <li id="quote3">
+          Crossroads did not take me long to read and once I started I could not put it down.
+          <div class="site">- EMMA BOOK BLOGGER FITZGERALD</div>
+        </li>
+        <li id="quote4">
+          It’s emotional and impactful but absolutely worth the read.
+          <div class="site">- PATRICE GOTTING</div>
+        </li>
+        <li id="quote5">
+          This is a story which really made me think about the importance of communication in a relationship, but it’s
+          also a story of being true to yourself and in the end doing the right thing.
+          <div class="site">- PAULINE RENDER</div>
+        </li>
+        <li id="quote6">
+          This was an interesting and thought provoking read, to see things from the other point of view.
+          -DEE GROOCOCK
+        </li>
+        <li id="quote7">
+          Even though this book was under 100 pages, the depth in this is incredible, the emotion really got to me. This
+          book was an emotional, (good) read.
+          <div class="site">- LAYLA PENFOLD</div>
+        </li>
+        <li id="quote8">
+          The author has shown both side of having children or not, but has done it in a way that neither is right or
+          wrong, which I found worked in this book.
+          <div class="site">- PAULA LEARMOUTH</div>
+        </li>
+        <li id="quote9">
+          I am finding it challenging to summarise how beautiful &amp; honest this novel was.
+          <div class="site">-MILLS</div>
+        </li>
+      </ul>
+    </section>
     <section id="books">
       <h3>Synopsis</h3>
       <p>Izzy has always been adamant about not wanting children. Her husband, Luke, had also agreed with this stance
@@ -76,7 +127,6 @@
         a
         couple&apos;s dynamic.</p>
     </section>
-
     <!-- Author -->
     <section id="author">
       <h3>Author</h3>
@@ -117,16 +167,43 @@
 
   <script>
     const { Player } = window.Shikwasa
-     const player = new Player({
-   container: () => document.querySelector('.audio-container'),
-   audio: {
-     title: 'The Authors Show',
-     artist: 'P Robertson - Crossroads',
-     cover: 'assets/the-authors-show.jpg',
-     src: 'assets/author-show.mp3',
-     preload: 'meta',
-   },
- })
+    const player = new Player({
+      container: () => document.querySelector('.audio-container'),
+      audio: {
+        title: 'The Authors Show',
+        artist: 'P Robertson - Crossroads',
+        cover: 'assets/the-authors-show.jpg',
+        src: 'assets/author-show.mp3',
+        preload: 'meta',
+      },
+    })
+  </script>
+
+  <script>
+    $(function() {
+	var i = 0;
+	slideCount = 5;
+	function timeout() {
+		setTimeout(function() {
+			// Move $("#quote" + i) off to the left
+			$("#quote" + i).animate({
+				right: "120%"
+			}, 2000);
+			// Change selected quote
+			i++;
+			if(i > (slideCount - 1)) {
+				i = 0;
+			}
+			// Move $("#quote" + i) to right side then back to middle
+			$("#quote" + i).css("right", "-60%");
+			$("#quote" + i).animate({
+				right: "20%"
+			}, 2000);
+			timeout();
+		}, 7000);
+	};
+	timeout();
+});
   </script>
 
 </body>
