@@ -260,7 +260,7 @@ text-align: right;
 
 @media (max-width: 560px) {
   section {
-    padding: 20px 1px;
+    padding: 20px 1px !important;
   }
   #hero {
     padding: 0;
@@ -273,6 +273,17 @@ text-align: right;
 @media (max-width: 420px) {
   .bttn {
     height: 48px;
+  }
+  h1 {
+    text-align: center;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
